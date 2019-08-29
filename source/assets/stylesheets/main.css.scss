@@ -1,24 +1,24 @@
 
 /*!
- * Prezens v0.0.1 (https://github.com/dikaio/prezens)
- * Copyright 2019 Donovan Dikaio
- * Licensed under MIT (https://github.com/dikaio/prezens/blob/master/LICENSE)
+ * Prezens v0.0.1 (https://github.com/arketekt/prezens)
+ * Copyright 2019 Arketekt, Arketekt Trust
+ * Licensed under MIT (https://github.com/arketekt/prezens/blob/master/LICENSE)
  */
 
 // Configuration
 
-@import "functions/functions";
-@import "variables/variables";
-@import "mixins/mixins";
-@import "utilities/utilities";
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "utilities";
 
 // Layout & components
 
-@import "base/base";
-@import "vendor/vendor";
-@import "components/components";
-@import "pages/pages";
+@import "base";
+@import "vendor";
+@import "components";
+@import "pages";
 
 // Helpers
 
-@import "helpers/helpers";
+@import "helpers";

@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/arketekt/suffix.git
+  revision: df1e50beca7599f3e47c5b83887573434f3253e3
+  specs:
+    optional_html (0.0.1)
+
+GIT
   remote: https://github.com/middleman/middleman-blog.git
   revision: dfe64c7d45c33caf2a8939d2c8d4b9ea0a652b50
   branch: master
@@ -7,12 +13,6 @@ GIT
       addressable (~> 2.3)
       middleman-core (>= 4.0.0)
       tzinfo (>= 0.3.0)
-
-GIT
-  remote: https://github.com/tommysundstrom/middleman-rack-optional-html.git
-  revision: df1e50beca7599f3e47c5b83887573434f3253e3
-  specs:
-    optional_html (0.0.1)
 
 GEM
   remote: https://rubygems.org/

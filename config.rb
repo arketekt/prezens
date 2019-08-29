@@ -44,7 +44,17 @@ configure :development do
       root: 'source/',
       urls: %w[/],
       try: %w[.html index.html /index.html]
-  # activate :asset_hash, ignore: %r{static\/.*|fonts\/.*} # exclude files in static and fonts folder from asset_hash
+end
+
+configure :staging do
+  activate :dotenv, env: '.env.staging'
+  activate :gzip
+  activate :minify_css, inline: true
+  activate :minify_javascript, inline: true,
+                               compressor: Uglifier.new(mangle: false,
+                                                        comments: :none)
+  activate :minify_html, remove_comments: false
+  activate :asset_hash, ignore: %r{static\/.*|fonts\/.*} # exclude files in static and fonts folder from asset_hash
 end
 
 configure :production do

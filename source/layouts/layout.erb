@@ -1,23 +1,11 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <% if current_page.url == '/' %>
-    <title>Places</title>
-    <% else %>
-    <title><%= current_page.data.title %> | Places</title>
-    <% end %>
-    <link rel="canonical" href="<%# current_url %>">
-    <%= stylesheet_link_tag "main" %>
-    <%= yield_content :inline_css %>
-    <%= javascript_include_tag "main", defer: true %>
-    <%= yield_content :inline_js %>
+    <%- partial 'partials/analytics' %>
+    <%= partial 'partials/head' %>
   </head>
   <body>
+    <%= partial 'partials/header' %>
     <%= yield %>
     <%= partial 'partials/footer' %>
   </body>

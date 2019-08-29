@@ -1,5 +1,5 @@
-.env.local
-.env.*.local
+.env.production
+.env.*.production
 .vscode
 .DS_Store
 .foreman
