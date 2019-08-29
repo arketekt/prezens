@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '2.6.3'
+ruby '2.6.2'
 
 gem 'builder', '~> 3.2'
 gem 'erb_lint', require: false
