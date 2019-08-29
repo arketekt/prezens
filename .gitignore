@@ -1,0 +1,16 @@
+.env.local
+.env.*.local
+.vscode
+.DS_Store
+.foreman
+.cache
+.sass-cache
+.bundle
+/log/*.log
+/tmp
+/build/
+node_modules/
+yarn-debug.log*
+yarn-error.log*
+node_modules
+/**/node_modules

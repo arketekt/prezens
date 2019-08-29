@@ -1,0 +1,12 @@
+<%# examples: https://json-ld.org %>
+<% if ENV["JSON_LD"] %>
+  <script type="application/ld+json">
+    {
+      "@context": "https://json-ld.org/contexts/person.jsonld",
+      "@id": "http://dbpedia.org/resource/John_Lennon",
+      "name": "John Lennon",
+      "born": "1940-10-09",
+      "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
+    }
+  </script>
+<% end %>
