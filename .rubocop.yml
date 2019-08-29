@@ -60,8 +60,6 @@ Naming/VariableName:
   SupportedStyles:
   - snake_case
   - camelCase
-Rails:
-  Enabled: true
 Style/AndOr:
   Description: Use &&/|| instead of and/or.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-and-or-or
@@ -415,45 +413,6 @@ Layout/DefEndAlignment:
   SupportedStylesAlignWith:
   - start_of_line
   - def
-Rails/ActionFilter:
-  Description: Enforces consistent use of action filter methods.
-  Enabled: true
-  EnforcedStyle: action
-  SupportedStyles:
-  - action
-  - filter
-  Include:
-  - app/controllers/**/*.rb
-Rails/HasAndBelongsToMany:
-  Description: Prefer has_many :through to has_and_belongs_to_many.
-  Enabled: true
-  Include:
-  - app/models/**/*.rb
-Rails/HttpPositionalArguments:
-  Enabled: false
-Rails/Output:
-  Description: Checks for calls to puts, print, etc.
-  Enabled: true
-  Include:
-  - app/**/*.rb
-  - config/**/*.rb
-  - db/**/*.rb
-  - lib/**/*.rb
-Rails/ReadWriteAttribute:
-  Description: Checks for read_attribute(:attr) and write_attribute(:attr, val).
-  Enabled: true
-  Include:
-  - app/models/**/*.rb
-Rails/ScopeArgs:
-  Description: Checks the arguments of ActiveRecord scopes.
-  Enabled: true
-  Include:
-  - app/models/**/*.rb
-Rails/Validation:
-  Description: Use validates :attribute, hash of validations.
-  Enabled: true
-  Include:
-  - app/models/**/*.rb
 Style/InlineComment:
   Description: Avoid inline comments.
   Enabled: false
@@ -542,10 +501,6 @@ Style/EndBlock:
 Style/EvenOdd:
   Description: Favor the use of Fixnum#even? && Fixnum#odd?
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#predicate-methods
-  Enabled: false
-Style/FlipFlop:
-  Description: Checks for flip flops
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-flip-flops
   Enabled: false
 Style/IfWithSemicolon:
   Description: Do not use if x; .... Use the ternary operator instead.
@@ -745,7 +700,7 @@ Layout/EmptyLinesAroundModuleBody:
   SupportedStyles:
   - empty_lines
   - no_empty_lines
-Layout/FirstParameterIndentation:
+Layout/IndentFirstArgument:
   Description: Checks the indentation of the first parameter in a method call.
   Enabled: true
   EnforcedStyle: special_for_inner_method_call_in_parentheses
@@ -758,7 +713,7 @@ Layout/IndentationWidth:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-indentation
   Enabled: true
   Width: 2
-Layout/IndentHash:
+Layout/IndentFirstHashElement:
   Description: Checks the indentation of the first key in a hash literal.
   Enabled: true
   EnforcedStyle: special_inside_parentheses
@@ -863,7 +818,7 @@ Layout/EndOfLine:
 Layout/IndentationConsistency:
   Description: Keep indentation straight.
   Enabled: true
-Layout/IndentArray:
+Layout/IndentFirstArrayElement:
   Description: Checks the indentation of the first element in an array literal.
   Enabled: true
 Layout/LeadingCommentSpace:
@@ -1045,9 +1000,6 @@ Lint/UselessSetterCall:
   Enabled: true
 Lint/Void:
   Description: Possible use of operator/literal/variable in void context.
-  Enabled: false
-Rails/Delegate:
-  Description: Prefer delegate method for delegations.
   Enabled: false
 Security/Eval:
   Description: The use of eval represents a serious security risk.
