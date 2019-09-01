@@ -54,7 +54,7 @@ configure :staging do
                                compressor: Uglifier.new(mangle: false,
                                                         comments: :none)
   activate :minify_html, remove_comments: false
-  activate :asset_hash, ignore: %r{static\/.*|fonts\/.*} # exclude files in static and fonts folder from asset_hash
+  activate :asset_hash, ignore: %r{static\/.*|fonts\/.*}
 end
 
 configure :production do
@@ -65,7 +65,7 @@ configure :production do
                                compressor: Uglifier.new(mangle: false,
                                                         comments: :none)
   activate :minify_html, remove_comments: false
-  activate :asset_hash, ignore: %r{static\/.*|fonts\/.*} # exclude files in static and fonts folder from asset_hash
+  activate :asset_hash, ignore: %r{static\/.*|fonts\/.*}
 end
 
 activate :deploy do |deploy|
