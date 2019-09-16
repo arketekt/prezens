@@ -3,17 +3,28 @@
 require 'builder'
 require 'uglifier'
 
-Time.zone = 'UTC'
+Time.zone = 'America/Los_Angeles'
 
 activate :aria_current
 activate :autoprefixer
 activate :sprockets
 activate :inline_svg
 
-set :fonts_dir, 'assets/fonts'
 set :js_dir, 'assets/javascripts'
-set :images_dir, 'assets/images'
 set :css_dir, 'assets/stylesheets'
+set :fonts_dir, 'assets/fonts'
+set :images_dir, 'assets/img'
+
+set :markdown,
+    autolink: true,
+    fenced_code_blocks: true,
+    footnotes: true,
+    highlight: true,
+    smartypants: true,
+    strikethrough: true,
+    tables: true,
+    with_toc_data: true
+set :markdown_engine, :redcarpet
 
 page '/*.xml', layout: false
 page '/*.json', layout: false
@@ -25,11 +36,11 @@ activate :blog do |blog|
   blog.permalink = '{title}.html'
   blog.sources = '{title}.html'
   blog.summary_length = 250
-  blog.default_extension = '.md'
+  blog.default_extension = '.html.erb'
   blog.paginate = true
   blog.per_page = 10
   blog.page_link = 'page/{num}'
-  blog.layout = '/layouts/article_layout'
+  blog.layout = '/layouts/blog'
 end
 
 configure :development do
@@ -38,23 +49,12 @@ configure :development do
     reload.no_swf = true
   end
   set :debug_assets, true
-  # activate :relative_assets
+  activate :relative_assets
   require 'rack/middleman/optional_html'
   use ::Rack::OptionalHtml,
-      root: 'source/',
-      urls: %w[/],
-      try: %w[.html index.html /index.html]
-end
-
-configure :staging do
-  activate :dotenv, env: '.env.staging'
-  activate :gzip
-  activate :minify_css, inline: true
-  activate :minify_javascript, inline: true,
-                               compressor: Uglifier.new(mangle: false,
-                                                        comments: :none)
-  activate :minify_html, remove_comments: false
-  activate :asset_hash, ignore: %r{static\/.*|fonts\/.*}
+      root: 'source',
+      urls: %w('/'),
+      try: %w('.html index.html /index.html')
 end
 
 configure :production do
@@ -65,14 +65,5 @@ configure :production do
                                compressor: Uglifier.new(mangle: false,
                                                         comments: :none)
   activate :minify_html, remove_comments: false
-  activate :asset_hash, ignore: %r{static\/.*|fonts\/.*}
-end
-
-activate :deploy do |deploy|
-  deploy.build_before     = true
-  deploy.deploy_method    = :rsync
-  deploy.clean            = true
-  deploy.host             = 'dikaio@165.225.157.75'
-  deploy.port             = '2222'
-  deploy.path             = '/srv/www/html/'
+  activate :asset_hash, ignore: %r{^assets/static/.*}
 end
