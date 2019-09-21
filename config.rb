@@ -9,6 +9,7 @@ activate :aria_current
 activate :autoprefixer
 activate :sprockets
 activate :inline_svg
+activate :imageoptim
 
 set :js_dir, 'assets/javascripts'
 set :css_dir, 'assets/stylesheets'
@@ -66,4 +67,5 @@ configure :production do
                                                         comments: :none)
   activate :minify_html, remove_comments: false
   activate :asset_hash, ignore: %r{^assets/static/.*}
+  # activate :asset_host, host: '//YOURDOMAIN.cloudfront.net'
 end
