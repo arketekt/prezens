@@ -20,7 +20,7 @@ gem 'middleman-minify-html', '~> 3.4'
 gem 'middleman-sprockets', '~> 4.0.0.rc.1'
 gem 'middleman-syntax'
 gem 'optional_html', git: 'https://github.com/tommysundstrom/middleman-rack-optional-html.git'
-gem 'redcarpet', '~> 3.4'
+gem 'redcarpet', '~> 3.5'
 gem 'rubocop', require: false
 gem 'sass', '~> 3.4'
 gem 'turbolinks', require: false
